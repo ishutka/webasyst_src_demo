@@ -1,0 +1,81 @@
+<div class="categoryHubSections">
+    <div class="categoryHubSection col-xs-6 col-sm-6 col-md-3">
+      <span class="categoryHubSectionTitle">Краски по типу:</span>
+      <ul>
+      {foreach $category.subcategories as $sc}
+        {if  $sc.is_paint_type eq 1 }
+          <li>
+            
+            <a href="{$sc.url}">
+              {$sc.name} <sup>{$sc.count}</sup>
+            </a>
+          </li>
+        {/if}
+      {/foreach}
+      </ul>
+    </div>
+    
+    <div class="categoryHubSection col-xs-6 col-sm-6 col-md-3">
+      <span class="categoryHubSectionTitle">Краски по цвету:</span>
+      <ul>
+      {foreach $category.subcategories as $sc}
+        {if  $sc.is_color_group eq 1 }
+          <li>
+            
+            <a href="{$sc.url}">
+              {$sc.name} <sup>{$sc.count}</sup>
+            </a>
+          </li>
+        {/if}
+      {/foreach}
+      </ul>
+    </div>
+    
+    <div class="categoryHubSection categoryHubSectionCars col-xs-6 col-sm-6 col-md-3">
+      <span class="categoryHubSectionTitle">Краски по марке авто:</span>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary btn-xs active">
+        <input type="radio" name="categories_list" id="favorite" value="favorite" autocomplete="off" checked> 
+        <span>популярные марки</span>
+        </label>
+        <label class="btn btn-primary btn-xs">
+        <input type="radio" name="categories_list" id="all" value="all" autocomplete="off"> 
+        <span>полный список</span>
+        </label>
+      </div>
+      <ul>
+      {foreach $category.subcategories as $sc}
+        {if  $sc.is_car_brand eq 1 && $sc.favorite eq 1}
+          <li>
+            {$sc_img = shopCategoryImagesPlugin::getCategoryImageUrl($sc.id)}			
+            {if empty($sc_img)}
+              {$sc_img = '/wa-apps/shop/themes/flip/img/no-thumb.png'}
+            {/if}
+            <a href="{$sc.url}">
+              {* <img class="img-responsive" src="{$sc_img}" alt="{$sc.name|escape}"> *}
+              {str_replace('Автокраски ','',$sc.name)} <sup>{$sc.count}</sup>
+            </a>
+          </li>
+        {/if}
+      {/foreach}
+      </ul>
+      
+     
+    </div>
+    
+    <div class="categoryHubSection col-xs-6 col-sm-6 col-md-3">
+      <span class="categoryHubSectionTitle">Популярные цвета:</span>
+      <ul>
+      {foreach $category.subcategories as $sc}
+        {if  $sc.is_color_code eq 1 }
+          <li>
+            
+            <a href="{$sc.url}">
+              {$sc.name} <sup>{$sc.count}</sup>
+            </a>
+          </li>
+        {/if}
+      {/foreach}
+      </ul>
+    </div>
+  </div>

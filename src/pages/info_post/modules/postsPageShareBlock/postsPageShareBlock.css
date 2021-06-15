@@ -1,0 +1,4 @@
+@import '../../../../modules/globals/shareBlock/shareBlock.css';
+#blog .share_block hr {
+  margin: 0;
+}

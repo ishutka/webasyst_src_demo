@@ -1,0 +1,52 @@
+#compare-table{
+  min-width: 450px
+}
+table.compare td {
+  text-align: center;
+  line-height: 1em;
+  padding: 10px 2px;
+  position: relative;
+}
+table.compare th {
+  text-align: left;
+}
+table.compare td u {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.no-underline img {
+  width: 100%;
+}
+.no-underline {
+  max-width: 100px;
+  display: block;
+  margin: auto;
+}
+table.compare td img {
+  display: block;
+  margin: 0 auto 10px;
+}
+.icon16.remove {
+  background-position: -96px -16px;
+}
+.compare-remove {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+.table {
+  margin-bottom: 0;
+}
+.table-responsive {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  #shop table.compare th,
+  #shop table.compare td {
+    white-space: normal;
+  }
+  .container-fluid {
+    padding: 0px !important;
+  }
+}

@@ -1,0 +1,13 @@
+{$tags = blogTagPlugin::getTags()}
+{if $tags}
+<div class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-tag"></span> Теги</div>
+    <div class="panel-body">
+        <div class="tags cloud">
+            {foreach $tags as $tag}
+            <a class="badge" href="{$tag.link}" style="font-size: {$tag.size}%; opacity: {$tag.opacity};">{$tag.name}</a>
+            {/foreach}
+        </div>
+    </div>
+</div>
+{/if}

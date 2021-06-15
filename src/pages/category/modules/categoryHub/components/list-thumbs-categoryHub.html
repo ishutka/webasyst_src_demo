@@ -1,0 +1,55 @@
+{if $products}
+	<div class=" row list-thumbs-categoryHub">
+		{$key = 0}
+		{foreach $products as $p}
+		    {$available = $wa->shop->settings('ignore_stock_count') || $p.count === null || $p.count > 0 || !$p.is_old}
+			{if $key < 5 &&  $available} 
+			
+				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 category_item_product" itemscope itemtype ="http://schema.org/Product">
+					<div class="image">
+						<div class="badge-wrapper">
+							{$badge_html = $wa->shop->badgeHtml($p.badge)}
+							{if $badge_html}
+								<div class="corner top right">{$badge_html}</div>
+							{/if}
+							<a class="product_img" href="{$p.frontend_url}" title="{$p.name}">
+							<lazy-image src="{$wa->shop->productImgUrl($p, '200')}" alt="{$p.name}" error="{$wa_theme_url}img/dummy200.png"></lazy-image>
+							</a>
+						</div>
+					</div>
+					
+					<p class="product_name">
+						<a href="{$p.frontend_url}" itemprop="name"  title="{$p.name}">{$p.name}</a>
+					</p>
+						
+					<div itemprop="offers" class="offers" itemscope itemtype="http://schema.org/Offer">
+						{if $p.compare_price > 0}<span class="compare-at-price nowrap"> {shop_currency($p.compare_price)} </span>{/if}
+			
+							<div class="text-muted text_in_stock ">есть в наличии</div>
+							<div class=" purchase addtocart" onsubmit="return false;" {if $p.sku_count > 1}data-url="{$p.frontend_url}{if strpos($p.frontend_url, '?')}&{else}?{/if}cart=1"{/if} method="post" action="{$wa->getUrl('/frontendCart/add')}">
+								{if $p.price > 0}
+									<div class="price nowrap">{shop_currency_html($p.price,$p.currency)}</div>
+								{/if}
+								<meta itemprop="price" content="{$p.price}">
+								<meta itemprop="priceCurrency" content="{$p.currency}">
+								<add-to-cart-button :init-data='{shopVuedataPlugin::getJsonProductDataForVue($p)}'
+								:id="{$p.id}"></add-to-cart-button>
+							</div>
+							<link itemprop="availability" href="http://schema.org/InStock" />
+						
+					</div>
+				</div>
+				{$key = $key+1}
+			{/if}
+		{/foreach}
+		
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+			<a href="/{$category.full_url}/?products=1" id="btnShowAllCategoryProducts">
+				<div class="icon">
+					<span class="glyphicon glyphicon-menu-right"></span>
+				</div>
+				<div class="text">Показать еще {$products_count - 5} товаров</div>
+			</a>
+		</div>
+	</div>
+{/if}

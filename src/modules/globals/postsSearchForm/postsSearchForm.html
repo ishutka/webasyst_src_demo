@@ -1,0 +1,9 @@
+<form method="get" action="{$wa_app_url}" class="form-horizontal">
+    <div class="input-group">
+        <input type="search" class="form-control" name="query" {if !empty($blog_query)}value="{$blog_query}" {/if}
+            placeholder="[`Search posts`]">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Поиск</button>
+        </span>
+    </div>
+</form>

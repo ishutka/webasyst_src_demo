@@ -1,0 +1,29 @@
+#comparingProductsItem .summary .btn-success {
+  margin-bottom: 20px;
+}
+#comparingProductsItem .summary td {
+  padding-left: 110px;
+  vertical-align: middle;
+}
+#comparingProductsItem .table-responsive table {
+  min-width: 600px;
+}
+#comparingProductsItem .reviews .actions > span {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #comparingProductsItem
+    .table-responsive
+    tr
+    > td:nth-child(2):not(td[colspan='2']) {
+    width: 100%;
+  }
+  #comparingProductsItem .table-responsive td {
+    white-space: normal;
+    min-width: 33%;
+  }
+  #comparingProductsItem .summary td {
+    padding-left: 10px;
+    text-align: center;
+  }
+}

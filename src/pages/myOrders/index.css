@@ -1,0 +1,34 @@
+@import './../../modules/my/left/index.css';
+
+#user_account_big_menu .glyphicon {
+  display: block;
+  font-size: 3em;
+  background: none repeat scroll 0 0 #f7f7f2;
+  border-radius: 50px 50px 50px 50px;
+  font-size: 42px;
+  height: 80px;
+  line-height: 80px;
+  margin: 0 auto 10px;
+  -webkit-box-shadow: 0 3px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px rgba(255, 255, 255, 0.8);
+  width: 80px;
+}
+.user_account_big_menu_item {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.user_account_big_menu_item a {
+  text-decoration: none;
+}
+@media screen and (max-width: 500px) {
+  .user_account_big_menu_item {
+    width: 100%;
+  }
+  #user_account_big_menu .glyphicon:before {
+    vertical-align: middle;
+  }
+  #user_account_big_menu .glyphicon {
+    height: 100px;
+    width: 100px;
+  }
+}

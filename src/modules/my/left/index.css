@@ -1,0 +1,34 @@
+.left-menu-wrapper {
+  float: left;
+  min-width: 25%;
+}
+.left-menu-wrapper .arrived {
+  font-size: 0.9em;
+}
+#user_account_navbar {
+  border: none;
+  background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+@media screen and (min-width: 992px) {
+  .left-menu-wrapper {
+    padding: 0 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .left-menu-wrapper {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #user_account_navbar {
+    background-color: #f8f8f8;
+    padding: 10px;
+  }
+  #user_account_navbar .nav-pills > li {
+    float: left;
+    min-width: 200px;
+  }
+}

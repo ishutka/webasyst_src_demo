@@ -1,0 +1,15 @@
+.links-to-categories {
+    background: #f7f7f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0 20px;
+    box-shadow: 0px 0px 2px #8f9885;
+    font-size: 13px;
+    color:#838875;
+    a {
+        font-weight: bold;
+        &:hover {
+            color:#838875;
+        }
+    }
+}

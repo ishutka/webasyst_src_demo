@@ -1,0 +1,13 @@
+#product-description a {
+    color: #26b926;
+}
+#product-description img {
+    max-width:100%;
+}
+#product-description ul li:before {
+    content: '✔';
+    color: #26b926;
+    margin-right: 7px;
+    font-size: 16px;
+    line-height: 1.4
+}

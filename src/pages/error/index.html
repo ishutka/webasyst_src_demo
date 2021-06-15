@@ -1,0 +1,23 @@
+{assign var='current_page' value='error' scope='global'}
+{literal}	
+	<script type="text/javascript">
+	// _gaq.push(['_trackPageview', '/error404?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer]);
+	ga(
+		'send', {
+		'hitType': 'event',
+		'eventCategory': '404_error',
+		'eventAction': window.location.href,
+		'eventLabel': document.referrer,
+		});
+	</script>
+{/literal}
+<div class="col-xs-12 col-md-12 col-md-12 col-lg-12">	
+	{if $error_code == 404}<h1>{$error_code}.</h1>
+	Упс! Ничего не найдено. Если вы видите эту ошибку — сообщите нам, пожалуйста, на адрес <a href="mailto:flip@flip.com.ua?subject={$error_code}">flip@flip.com.ua</a> указав адрес этой страницы.
+	
+	{elseif $error_code}<h1>{$error_code}.
+	{if $error_message}{$error_message}{else}[s`Error`]{/if}
+	</h1>
+	[s`The requested resource is not available.`]
+	{/if}
+</div>

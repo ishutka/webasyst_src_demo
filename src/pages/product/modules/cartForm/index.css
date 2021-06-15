@@ -1,0 +1,22 @@
+
+#product_page_cart {
+  padding: 10px;
+  border: 1px solid #d2d3cb;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#product_page_cart .price {
+  font-size: 2em;
+}
+#product_page_cart .checkbox-component {
+  margin-left: 5px;
+}
+#product_page_cart button:focus,
+#product_page_cart i:focus,
+#product_page_cart button:active,
+#product_page_cart i:active {
+  border: none;
+  outline: none;
+}
+

@@ -1,0 +1,244 @@
+@import './modules/postsPageShareBlock/postsPageShareBlock.css';
+@import '@/mainStylesVariables.scss';
+
+#infopost-page {
+  overflow: hidden;
+  padding-top: 40px;
+  a {
+    color: #fb7c00
+  }
+  a:hover {
+    color: #337ab7
+  }
+  .text[itemprop="articleBody"] {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    >* {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-top: 0;
+    }
+    > figure {
+      img {
+        margin: 0 auto; 
+        display: block;
+      }
+    }
+    img {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+  .mb-0 {
+    margin-bottom: 0 !important;
+  }
+  .mt-0 {
+    margin-top: 0 !important;
+  }
+  .ml-0 {
+    margin-left: 0 !important;
+  }
+  .mr-0 {
+    margin-right: 0 !important;
+  }
+  .ma-0 {
+    margin: 0 !important;
+  }
+  .pb-0 {
+    padding-bottom: 0 !important;
+  }
+  .pt-0 {
+    padding-top: 0 !important;
+  }
+  .pl-0 {
+    padding-left: 0 !important;
+  }
+  .pr-0 {
+    padding-right: 0 !important;
+  }
+  .pa-0 {
+    padding: 0 !important;
+  }
+  .reviews-branch {
+    padding: 0px;
+    margin: 0px;
+  }
+  .avatar-wrapper img {
+    display: inline-block
+  }
+  .reviews-branch li {
+    list-style: none;
+  }
+  table.full-width {
+    width: 100%;
+  }
+  [itemprop="articleBody"]>{
+    .youtube-iframe__wrapper .youtube-iframe {
+      width: 100%;
+      height: calc(50vw - 15px);
+    }
+  }
+  [itemprop="image"] {
+    margin-top: 30px;
+  }
+  table { 
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    }
+  }
+  
+  ol ol{
+    list-style: lower-alpha;
+    ol{
+    list-style: upper-roman;
+    }
+  }
+  ol li,ul li {
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: square;
+  }
+  ul.none-list-style {
+    list-style: none;
+    padding-left: 15px;
+  }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    line-height: 1.2;
+  }
+  h3,h4,h5 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    padding: 10px 15px 15px;
+    text-align: center;
+    margin: 0;
+  }
+  blockquote {
+    border-left: 4px solid $main_brand_color;
+  }
+  
+  .share_block {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    .shareHeading {
+      display: none;
+    }
+  }
+  .comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #838c6f;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+  .write-review{
+    margin:20px auto 30px;
+    text-align: center
+  }
+  .comment.review .avatar-wrapper{
+    padding: 0 0 0 20px
+  }
+  .comment .summary {
+    font-size: 0.9em;
+    color: #777;
+  }
+  .comment .review_description {
+    padding-bottom: 10px;
+  }
+  @media (min-width: 768px){
+    h2,
+    [itemprop="articleBody"]>*:not(figure){
+      margin-left: #{$container-sm/12}px;
+      margin-right: #{$container-sm/12}px;
+    }
+    [itemprop="articleBody"]> {
+      .youtube-iframe__wrapper .youtube-iframe {
+        height: #{$container-sm*5/12}px;
+      }
+      table.full-width {
+        width: #{$container-sm*5/6}px
+      }
+    }
+  }
+  @media (min-width: 992px){
+    h2,
+    [itemprop="articleBody"]>*:not(figure) {
+      margin-left: #{$container-md/12}px;
+      margin-right: #{$container-md/12}px;
+    }
+    [itemprop="articleBody"]> {
+      .youtube-iframe__wrapper .youtube-iframe {
+        height: #{$container-md*5/12}px;
+      }
+      table.full-width {
+        width: #{$container-md*5/6}px
+      }
+    }
+  }
+  @media (min-width: 1200px){
+    h2,
+    [itemprop="articleBody"]>*:not(figure) {
+      margin-left: #{$container-lg/12}px;
+      margin-right: #{$container-lg/12}px;
+    }
+    [itemprop="articleBody"]> {
+      .youtube-iframe__wrapper .youtube-iframe {
+        height: #{$container-md*5/12}px;
+      }
+      table.full-width {
+        width: #{$container-lg*5/6}px
+      }
+    }
+  } 
+
+  @media (max-width: 1199px) {
+    .comments.reviews-branch ul {
+      padding-left: 15px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-top: 10px;  
+    .date-and-category {
+      margin-bottom: 50px;
+    }
+    .date-and-category,h1 {
+      text-align: left;
+      padding: 0;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 30px 0 20px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    [itemprop="image"] {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 500px) {
+    .comment.review > .row > div {
+      width: 100%;
+    }
+    .comment.review .avatar-wrapper{
+    padding: 0
+    }
+  }
+}

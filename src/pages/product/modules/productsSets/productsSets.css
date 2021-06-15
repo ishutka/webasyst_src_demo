@@ -1,0 +1,114 @@
+.productsets-set {
+    overflow: hidden;
+    position: relative;
+    clear: both;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.productsets-total {
+    margin-top: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+.productsets-product-list {
+    clear: both;
+    list-style: none;
+    margin: 10px 0 0;
+}
+.product_item_set {
+    background: url(/wa-apps/shop/themes/flip/img/icon_plus.png) no-repeat 95% 50%;
+}
+.productsets-price {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: auto;
+    width: 25%;
+    display: block;
+    padding: 10px 0 18px;
+    background: #007bc8;
+    margin-bottom: 30px;
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+.productsets-small-price {
+    color: #fff;
+    background: #b14791;
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+}
+.productsets-small-price .productsets-price-value {
+    padding: 5px 10px;
+    font-size: 14px;
+    display: block;
+}
+.productsets-price-value .usd_price,
+ .productsets-price .usd_price{
+    color: #fff;
+}
+.product_item_set:last-child {
+    background: none;
+}
+.productsets-set.s-set-9 .productsets-total span, 
+.productsets-form.s-set-9 .productsets-total span {
+    color: #007bc8;
+}
+.productsets-set.s-set-9 .productsets-price:before,
+ .productsets-set.s-set-9 .productsets-price:after, 
+ .productsets-set.s-set-9 .productsets-price {
+    background: #007bc8;
+}
+.productsets-price-value .usd_price,
+.productsets-price .usd_price,
+.productsets-set.s-set-9 .productsets-price {
+    color: #ffffff;
+}
+.productsets-total span {
+    text-decoration: line-through;
+    font-weight: bold;
+    color: #007bc8;
+    font-size: 16px;
+}
+.productsets-set.s-set-9 .productsets-line {
+    border-top: 3px solid #007bc8;
+}
+.productsets-buttons {
+    float: left;
+    margin-top: 10px;
+}
+.productsets-set .productsets-button {
+    vertical-align: top;
+}
+.productsets-price:before {
+    display: block;
+    content: '';
+    height: 17px;
+    width: 50%;
+    right: 0;
+    bottom: -6px;
+    position: absolute;
+    background: #007bc8;
+    transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -webkit-transform: skewY(5deg);
+}
+.productsets-price:after {
+    display: block;
+    content: '';
+    height: 17px;
+    width: 50%;
+    left: 0;
+    bottom: -6px;
+    position: absolute;
+    background: #007bc8;
+    transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -webkit-transform: skewY(-5deg);
+}

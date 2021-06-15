@@ -1,0 +1,28 @@
+.post-categories-side-bar {
+    ul {
+        padding-left: 0;
+        a {font-size: 16px;}
+    }
+    .posts-menu-heading {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0px 0 20px;
+    }
+    li {
+        &.active a{
+            font-weight: 600 ;
+        }
+    }
+    @media screen and (max-width:991px) {
+        li {
+            display: inline-block;
+            margin: 5px 15px 5px 0;
+            &:not(:last-child):after {
+                content: '|';
+                margin-left: 14px;
+                color: #ccc;
+            }
+            
+        }
+    }
+}

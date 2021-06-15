@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+  #comparing-collection .category_item_product td {
+    white-space: normal;
+  }
+}

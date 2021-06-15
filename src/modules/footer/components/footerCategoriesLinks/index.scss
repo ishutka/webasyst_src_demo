@@ -1,0 +1,61 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+
+ 
+.footer-category {
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    h4 {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        color: $link_color;
+        margin: 0;
+    }
+    .footer-sub-categories {
+        display: inline-block;
+        span {
+            display: inline-block;
+            padding: 0 10px;
+            position: relative; 
+            a {
+                @include minor_link();
+                line-height: 1.2;
+            }
+        }
+        span:not(:last-child):after {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 0;
+            height: 12px;
+            width: 1px;
+            content: "";
+            background: $body_font_color;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        margin-bottom: 25px;
+        .footer-sub-categories {
+            margin: 0 -10px;
+        }
+        h4 {
+            margin-bottom: 5px;
+            display: block;
+        }
+    }
+}
+.footer-categories-part {
+    border-top: 1px solid #e1e1e1;
+    padding: 70px 0;
+    @media screen and (max-width: 991px) {
+        padding: 60px 0; 
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}

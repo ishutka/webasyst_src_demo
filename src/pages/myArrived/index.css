@@ -1,0 +1,27 @@
+@import './../../modules/my/left/index.css';
+
+.myArrived {
+  padding-left: 30px;
+}
+.myArrived .table-responsive {
+  margin-bottom: 40px;
+}
+.myArrived table {
+  overflow-x: auto;
+}
+.myArrived .nav-tabs {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+@media screen and (max-width: 991px) {
+  .myArrived .table-responsive {
+    border: 1px solid #ddd;
+    border-top: none;
+  }
+}

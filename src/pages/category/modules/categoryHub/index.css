@@ -1,0 +1,192 @@
+.well_flip {
+    background: #f9f0e3;
+    padding: 20px;
+    margin: 20px 0px;
+    color:#333
+}
+.h3, h3 {
+    font-size:18px;
+}
+.list-thumbs-categoryHub{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+.list-thumbs-categoryHub  .product_name {
+    font-size: 1em;
+    display: block;
+	min-height:60px;
+	border-top:1px solid #e0e1dc;
+	padding-top:15px;
+	margin-top:0px;
+}
+.list-thumbs-categoryHub  .offers  {
+    border:none;
+    background: #fff;
+}
+.list-thumbs-categoryHub  .image .product_img {
+    justify-content: flex-start
+}
+.list-thumbs-categoryHub  .image  {
+	border-bottom:1px solid #333;
+	display:block;
+	padding-bottom:10px;
+}
+#btnShowAllCategoryProducts {
+	text-align:center;
+	text-decoration:none;
+	line-height:100%;
+	margin-top:10%;
+}
+#btnShowAllCategoryProducts .icon {
+	font-size:10em;
+	color: #6fbc6e;
+	text-shadow:1px 1px 1px #444;
+}
+#btnShowAllCategoryProducts .text {
+	margin-top:5px;
+	font-size:1.3em;
+	font-style:italic;
+}
+.categoryHubSectionCars .btn {
+	border:none;
+    background: none;
+    text-shadow: none;
+    box-shadow: none;
+    color: #666;
+}
+.categoryHubSectionCars .btn span {
+	border-bottom: 1px dashed;
+}
+.categoryHubSectionCars[name="all"] ul {
+    max-height: 1000px;
+}
+.categoryHubSectionCars ul {
+    margin-top:10px;
+    transition: max-height 0.3s ease;
+    max-height: 25em;
+    overflow: hidden;
+}
+.categoryHubSectionCars .btn-primary:active,
+.categoryHubSectionCars .btn:hover {
+    color: #ed1c24 !important;
+    background: transparent
+}
+
+.categoryHubSectionCars .btn-primary.active {
+	background: #777 !important;
+	color: #fff !important;
+}
+.categoryHubSectionCars .btn-primary:active span, .btn-primary.active span {
+	border:none;
+}
+.categoryHub { 
+    padding:15px 0px;
+}
+.categoryHubSubcategories {
+	padding:10px;
+	border:1px solid #c1ccaf;
+	overflow:hidden;
+    margin:0px 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.categoryHub h1 {
+	border:1px solid #c1ccaf;
+	border-bottom:0px;
+	display:inline-block;
+	padding:15px;
+	background:#fff;
+	margin:0px 15px;
+	position:relative;
+	z-index:1;
+	top:2px;
+	font-size:1.4em !important;
+	color: #333;
+}
+.categoryHubArticles {
+	margin:20px 0px 0px;
+	padding:10px 0px;
+	overflow: hidden;
+}
+
+.categoryHubArticles img {
+    height:auto;
+    min-width:100%;
+    max-width:130%;
+    min-height:100%;
+}
+.categoryHubArticles img[lazy="loading"] {
+    max-width: 60px;
+    min-width: 30px;
+    min-height: 30px;
+}
+.categoryHubArticles a {
+    color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    height:200px;
+    margin-bottom: 20px;
+}
+.categoryHubArticles a:hover {
+	color: #ed1c24;
+}
+.categoryHubArticles .post_title  {
+	position:absolute;
+    bottom:0;
+    left: 0;
+	align-items: flex-end;
+	display:flex;
+	width:100%;
+	font-size:1.4em;
+    padding:1% 5%;
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 40%;
+}
+.categoryHubArticle {
+    position:relative;
+}
+.categoryHubSections{
+    display: flex;
+    flex-wrap: wrap;
+}
+.categoryHubSectionTitle {
+	font-size:1.2em;
+}
+.categoryHubSection ul {
+	color: #333;
+	list-style:square;
+	font-size:1em;
+	padding:0px;
+	margin:0px 0px 20px 25px;
+}
+.categoryHubSection ul li {
+	padding:0px 0px;
+}
+@media (max-width:767px){
+    .list-thumbs-categoryHub> .col-xs-12{
+        max-width:50%;
+        margin-bottom: 25px
+    }
+    .categoryHubArticles a{
+        height:150px
+    }
+}
+@media (max-width:400px){
+    .list-thumbs-categoryHub> .col-xs-12{
+        max-width:100%;
+    }
+    #btnShowAllCategoryProducts .icon {
+        font-size:5em;
+    }
+    .categoryHubArticle{
+        width: 100%
+    }
+    .categoryHubArticles a{
+        height:200px
+    }
+}

@@ -1,0 +1,18 @@
+table.features {
+    clear: both;
+    border-spacing: 0;
+    border-collapse: collapse;
+    min-width: 80%;
+}
+table.features td.name {
+    background: url(/wa-apps/shop/themes/flip/img/features_dot.jpg) repeat-x 0px 18px;
+}
+table.features td {
+    padding: 0px;
+    vertical-align: bottom;
+}
+table.features td.name strong {
+    display: inline-block;
+    background: #fff;
+    padding: 3px;
+}

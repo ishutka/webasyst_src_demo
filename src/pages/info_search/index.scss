@@ -1,0 +1,8 @@
+@import '../../modules/globals/postsCategories/postsCategories.scss';
+.info-search-page {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    @media screen and (max-width: 767px) {
+        padding-top: 10px;
+    }
+}

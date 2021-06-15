@@ -1,0 +1,11 @@
+{if $reviews_total_count > 0}
+    <span id="small_product_reviews">
+        <a href="{$wa->shop->productUrl($product)}reviews/" >
+            <strong>{$reviews_total_count}</strong> 
+            отзывов 
+            <span class="hidden-xs hidden-sm">	
+                о {$product.name}	
+            </span>
+        </a>
+    </span>
+{/if}

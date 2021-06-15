@@ -1,0 +1,68 @@
+
+#product-gallery {
+  margin: -44px 0px 0px 0px;
+  padding: 0px 10px;
+  position: relative;
+}
+/* For easyzoom image scale */
+#product-core-image  .easyzoom-flyout  {
+  margin-left: 10px !important
+}
+#product-core-image  .easyzoom-flyout img {
+  max-width: unset;
+}
+#product-core-image a {
+  display: inline-block;
+  margin: 0 auto
+}
+#product-core-image img {
+  margin-bottom: 40px;
+}
+#product-gallery * {
+  outline: none;
+}
+#product-gallery .image {
+  position: relative;
+  padding-top: 13px;
+}
+#product-gallery .image.selected .product_image_arrow {
+  display: block;
+  border-right: 17px solid #fff;
+  border-left: 17px solid #fff;
+  border-bottom: 15px solid #efefe5;
+}
+#product-image {
+  width: 100%;
+  max-width: 300px
+
+}
+
+#product-gallery .product_image_arrow {
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: 36%;
+  width: 33px;
+  height: 19px;
+  background: url(/wa-apps/shop/themes/flip/img/product_image_selected_arrow.jpg)
+    no-repeat 0px 0px;
+}
+#product-gallery .image.selected img {
+  margin-top: 0px;
+  border: 5px solid #efefe5;
+}
+
+#product-gallery .image img {
+  border: 5px solid #fff;
+  border-top: 0px;
+  margin-top: 15px;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  cursor: pointer;
+}
+/* style for  easyzoom */
+.easyzoom-flyout img {
+  max-width: none;
+}
+#product-gallery {display:none;}

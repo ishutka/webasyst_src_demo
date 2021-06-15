@@ -1,0 +1,132 @@
+.share .social_buttons {
+    margin: 0px;
+    padding: 0px;
+}
+.share .social_buttons li {
+    list-style: none;
+    font-family: 'Trebuchet ms';
+    margin: 5px 0px;
+    display: inline-block;
+}
+.share .social_buttons li>a {
+    text-decoration: none;
+    padding: 7px 10px 3px 32px;
+    display: block;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    position: relative;
+    font-size: 0.9em;
+    overflow: hidden;
+}
+.share .social_buttons li.li_fb .social_icon.fb {
+    background: url(/wa-apps/shop/themes/flip/img/social_icons.png) no-repeat 2px 0px;
+}
+.share .social_buttons li.li_vk .social_icon.vk {
+    background: url(/wa-apps/shop/themes/flip/img/social_icons.png) no-repeat 0px -34px;
+}
+.share .social_buttons li.li_tw .social_icon.tw {
+    background: url(/wa-apps/shop/themes/flip/img/social_icons.png) no-repeat 0px -136px;
+}
+.share .social_buttons li.li_gp .social_icon.gp {
+    background: url(/wa-apps/shop/themes/flip/img/social_icons.png) no-repeat 1px -60px;
+}
+.share .social_buttons li.li_ok .social_icon.ok {
+    background: url(/wa-apps/shop/themes/flip/img/social_icons.png) no-repeat 3px -92px;
+}
+.share .social_buttons li.li_fb a {
+    background: #45639e;
+}
+.share .social_buttons li.li_tw a {
+    background: #23b9eb;
+}
+.share .social_buttons li.li_vk a {
+    background: #51749c;
+}
+.share .social_buttons li.li_gp a {
+    background: #dd4b39;
+}
+.share .social_buttons li.li_ok a {
+    background: #fa890f;
+}
+.share .social_buttons li .social_icon {
+    display: inline-block;
+    width: 27px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    left: 2%;
+}
+.share .social_buttons li a .social_count {
+    font-weight: bold;
+    float: right;
+}
+.share .social_buttons li.li_ok,
+ .share .social_buttons li.li_vk {
+    display: none;
+}
+.share_header {
+  color: #8c997e;
+  font-size: 1.1em;
+  margin: 10px 0px 3px 0px;
+  text-align: center;
+}
+.social_buttons .social_name{
+    display: none
+}
+@media screen and (min-width: 424px){
+    #container_white_bg .share_block.share_blockFixed {
+        background: #fff !important;
+        top: 63px !important;
+        left: 0px !important;
+        position: fixed !important;
+        z-index: 100 !important;
+        margin: 0px !important;
+        padding-left: 1% !important;
+        box-shadow: 1px 1px 1px #eee;
+        -moz-box-shadow: 1px 1px 1px #eee;
+        -webkit-box-shadow: 1px 1px 1px #eee;
+        padding-top: 5px !important;
+        padding-right: 20px !important;
+    }
+}
+@media screen and (max-width: 767px){
+    .shareHeading{
+        padding: 0
+    }
+    .share .social_buttons li {
+        float: left;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .share .social_buttons li a {
+        height: 26px;
+        overflow: visible;
+        margin-bottom: 10px;
+    }
+    .share .social_buttons li a {
+        padding: 7px 0px 3px 27px;
+    }
+    .share .social_buttons li .social_count {
+        color: #666;
+        position: absolute;
+        bottom: -17px;
+        left: 0%;
+        display: block;
+        float: none !important;
+        text-align: center;
+        width: 100%;
+    }
+    #container_white_bg .share_block.share_blockFixed {
+        background: #fff !important;
+        top: 65px !important;
+        left: 0px !important;
+        position: fixed !important;
+        width: 100% !important;
+        z-index: 100 !important;
+        margin: 0px !important;
+        padding: 5px 0px !important;
+        margin: 0px !important;
+    }
+}

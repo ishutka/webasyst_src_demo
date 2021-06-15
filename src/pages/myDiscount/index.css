@@ -1,0 +1,14 @@
+@import './../../modules/my/left/index.css';
+@media screen and (min-width: 768px) {
+  .myDiscount {
+    padding-left: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .myDiscount {
+    padding: 0 30px;
+  }
+}
+.myDiscount .price {
+  white-space: nowrap;
+}

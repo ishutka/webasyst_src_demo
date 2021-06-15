@@ -1,0 +1,12 @@
+.product_page_title {
+    margin: 0px 0px 10px 0px;
+}
+.product_page_title h1 {
+    font-size: 2.5em !important;
+    color: #0A3966;
+    margin: 3px 0px;
+}
+.product_page_title hr {
+    margin: 3px 0px;
+    padding: 0px;
+}

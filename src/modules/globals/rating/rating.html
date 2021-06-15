@@ -1,0 +1,22 @@
+<!-- Условие ($reviews_total_count > 0 ) добавлено во избежание подобной ошибки: https://www.flip.com.ua/efirnye-resivery/lorton_t2_19-hd/ 
+    (принтскрин http://prntscr.com/n5uep1) -->
+{if $reviews_total_count > 0 }
+    <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" title="{sprintf('[`Average user rating: %s / 5`]', $product.rating)}">
+        {if !empty($product.rating) && $product.rating > 0}
+            <span itemprop="ratingValue" style="display: none;" >{$product.rating}</span>
+            <span class="rating-stars-wrapper">
+                <!-- Дробный рейтинг получаем строкой - числа через запятую,-поэтому использую фильтр: -->
+               <Rating :value="{$product.rating|replace:',':'.'}"></Rating>
+            </span>
+            {else}
+            <meta itemprop="ratingValue"  content="5">
+        {/if}
+        <span itemprop="reviewCount" style="display: none;"  class="reviews-count">{$reviews_total_count}</span>
+    </span>
+{/if}
+{if $show_empty_rating_stars && empty($product.rating)}
+<span class="rating-stars-wrapper">
+    <!-- Дробный рейтинг получаем строкой - числа через запятую,-поэтому использую фильтр: -->
+   <Rating :value="{$product.rating|replace:',':'.'}"></Rating>
+</span>
+{/if}

@@ -1,0 +1,53 @@
+/* Цвета основные, главным образом, для текста */
+$main_brand_color:#FB7C00;
+$body_font_color: #666;
+$huge_text: #999;
+$link_color: #000;
+$small_link_color: #0066CC;
+$link_read_more: #0099CC;
+$green_color: #8BC500;
+$yellow_color: #FCB800;
+$red_color: #FF3300;
+$gray_bg: #f5f5f5;
+$container-lg:1140;
+$container-md:940;
+$container-sm:720 ;
+
+@mixin link_color_animate($color:#{$link_color},$color_hover: #{$main_brand_color}) {
+    color: $color;
+    transition: 0.3s;
+    &:hover {
+        color: $color_hover;
+    }
+}
+@mixin color_transition() {
+    transition: 0.3s;
+  }
+@mixin hover_color_transition($x:0.3) {
+    transition: color #{$x}s;
+}
+@mixin minor_link() {
+    @include hover_color_transition(0.5);
+    display: inline-flex;
+    position: relative;
+    color: $body_font_color;
+    &:before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background-color: $link_color;
+    content: "";
+    transition: .35s;
+    }
+    
+    &:hover::before {
+        width: 100%;
+        left: 0;
+        right: auto; 
+    }
+    &:hover {
+        color: $link_color;
+    }
+}

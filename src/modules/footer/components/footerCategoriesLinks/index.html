@@ -1,0 +1,24 @@
+<div class="footer-categories-part">
+    {$categories = $wa->shop->categories()}
+    {foreach $categories as $cat}
+        {if $cat.depth eq 0}
+            {$sub_categories = $wa->shop->categories($cat.id, 1)}
+            <div class="footer-category">
+                <h4>
+                    <a href="{$cat.url}">{$cat.name}
+                        {if count($sub_categories) > 0}<span>:</span>{/if}
+                    </a>
+                </h4>
+                {if $sub_categories}
+                    <div class="footer-sub-categories">
+                        {foreach $sub_categories as $sub_cat}
+                            {if $sub_cat@iteration<7}
+                                <span><a href="{$sub_cat.url}">{$sub_cat.name}</a></span>
+                            {/if}
+                        {/foreach}
+                    </div>
+                {/if}
+            </div>
+        {/if}
+    {/foreach}
+</div>

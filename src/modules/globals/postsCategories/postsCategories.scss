@@ -1,0 +1,60 @@
+@import '@/mainStylesVariables.scss';
+@import '../postItemTemplate/index.scss';
+
+.post-categories-tabs {
+    h1 {
+        font-size: 48px;
+        font-weight: 600;
+        padding: 100px 15px 60px;
+        text-align: center;
+    }
+    .nav-tab {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+        a {
+            padding: 0 15px;
+            font-size: 18px;
+            font-weight: 600;
+            @include link_color_animate($huge_text,$link_color);
+            transition: 0.5s;
+            line-height: 1;
+            &.active {
+                color: $link_color;
+            }
+        }
+    }
+    .nav-item {
+        margin-bottom: 7px;
+    }
+    .nav-item:first-child {
+        margin-left:  -15px;
+    }
+    .nav-item:last-child {
+        margin-right: -15px;
+    }
+
+    .tab-content { 
+        padding: 50px 0 60px;
+        overflow: hidden;
+    }
+    .tab-pane {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @media screen and (max-width: 991px) {
+        .nav-tab  {
+            a {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+        }
+    }
+    @media screen and (max-width: 599px) {
+        .tab-pane .col-xs-6 {
+            width: 100%;
+        }
+    }
+}

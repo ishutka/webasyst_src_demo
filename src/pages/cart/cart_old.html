@@ -1,0 +1,221 @@
+
+{if $smarty.server.HTTP_HOST != 'flip.open'}
+  <script src="{$wa_theme_url}cart.js"></script>
+{else}
+<script src="{$wa_theme_url}dist/cart.js"></script>
+{/if}
+<style>
+  #fixed-nav-sidebar {
+    display: none;
+  }
+</style>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		{if !$cart.count}
+			<div class="blank"></div>
+			<h3>[`Shopping cart`]</h3>
+			<p class="alert alert-warning">[`Your shopping cart is empty.`]</p>
+		{else}
+			<div id="cart-content" class="content">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+						<form method="post" class="form-horizontal cartform">
+							 <div class="blank"></div>
+							 <h3>[`Shopping cart`]</h3>
+
+              <div id="antennasCartWarning">
+              </div>
+              
+              
+							{$only_intime = false}
+							{foreach $cart.items as $item}
+								{if $item.product && $item.product.only_intime}
+									{$only_intime = true}
+								{/if}
+							{/foreach}
+							{if $only_intime}
+								<div class="alert alert-danger">
+									Доставка товаров возможна только через службу InTime!
+								</div>
+							{/if}
+							 <div class="cart">
+								{foreach $cart.items as $item}
+									<div class="row" data-id="{$item.id}">
+										<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 item-thumb">
+											<a href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">
+												{$wa->shop->productImgHtml($item.product, '200x200', ['class' => 'img-responsive', 'default' => "`$wa_theme_url`img/dummy200.png"])}
+											</a>&nbsp;
+										</div>
+
+										<div class="col-xs-8 col-sm-8 col-md-5 col-lg-6 item-name">
+											<a href="{$wa->shop->productUrl($item.product)}" class="bold">{$item.product.name|escape}</a>
+											{if $item.sku_name && $item.sku_name != $item.product.name}(<em>{$item.sku_name|escape}</em>){/if}
+											{if !empty($item.services)}
+												{foreach $item.services as $service_id => $s}
+													<div class="form-group services" {if !empty($s.id)}data-id="{$s.id}"{/if}>
+														<div class="col-xs-12">
+															{if isset($s.variants)}
+																<select class="form-control" name="service_variant[{$item.id}][{$service_id}]" {if empty($s.id)}disabled{/if}>
+																	{foreach $s.variants as $variant_id => $v}
+																	<option {if $s.variant_id == $variant_id}selected{/if} value="{$variant_id}">{$v.name|escape} (+{shop_currency($v.price, $s.currency)})</option>
+																	{/foreach}
+																</select>
+															{else}
+
+																<div class="checkbox">
+																	<label>
+																		<input {if !empty($s.id)}checked{/if} type="checkbox" name="services[{$item.id}][]" value="{$service_id}">
+																		{$s.name|escape} {if $s.price && !isset($s.variants)}<br /><span> + {shop_currency_html($s.price, $s.currency)} </span>{/if}
+																	</label>
+																</div>
+															{/if}
+														</div>
+													</div>
+												{/foreach}
+											{/if}
+
+                      {if $item.stock_poland}
+    										{shopSiteprofProductShippingPlugin::getPolandHtml()}
+                        Укажите адрес доставки для доставки службой <strong>MEEST Express</strong>.<br />
+                        Оплата за товар наличными при получении.<br />
+                        Предоплата за доставку 100%.<br />
+                        Стоимость доставки: <strong id="shippingDeliveryCost"><i class="icon16 loading"></i></strong>
+                        <div id="shippingDeliveryAddress">
+                          <i class="icon16 loading"></i>
+                        </div>
+                      {/if}
+										</div>
+
+										<div class="col-xs-3 col-sm-3 col-md-2 col-lg-1 item-qty">
+											<input type="text" name="quantity[{$item.id}]" value="{$item.quantity}" class="tc form-control input-sm qty{if !empty($item.error)} error{/if}">
+										</div>
+
+
+										<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 tc">
+											<span class="nowrap price item-total">{shop_currency_html($item.full_price, true)}</span>
+										</div>
+										<div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 item-remove">
+											<a class="delete btn btn-xs btn-default" title="[`Remove from cart`]"><i class="fa fa-close"></i></a>
+										</div>
+										<div class="col-xs-12"><hr /></div>
+									</div>
+									 {if !empty($item.error)}<script>alert({json_encode($item.error)});</script>{/if}
+								{/foreach}
+
+								<!-- discount coupon -->
+								<div class="row no-border" {if !shopDiscounts::isEnabled('coupons') && !$discount}style="display:none"{/if}>
+									<div class="col-xs-12 cart-coupon no-border">
+										{if shopDiscounts::isEnabled('coupons')}
+										[`Discount coupon (if you have one)`]:
+										<input type="text" name="coupon_code" value="{$coupon_code|escape}"> <input type="submit"  value="[`Apply`]">
+										{/if}
+									</div>
+									<div class="col-xs-6 col-sm-9 tr "><strong>[`Discount`]</strong></div>
+									<div class="col-xs-6  col-sm-3 ">
+										<div class="cart-discount {if $discount}label label-warning{/if}">
+											<span class="nowrap">
+                        {if $discount}
+                          &minus; {shop_currency_html($discount, true)} {$total = $discount+$cart.total} (- {round($discount/($total/100))}%)
+                        {else}
+                          -
+                        {/if}
+                      </span>
+										</div>
+									</div>
+								</div>
+
+								{if shopAffiliate::isEnabled() && $affiliate_bonus > 0}
+									<!-- affiliate bonus -->
+									<div class="row no-border">
+										<div class="col w12 no-border">
+											{sprintf('[`Your current affiliate bonus of %s points allows you to get an additonal discount of up to %s`]', $affiliate_bonus, shop_currency_html(shopAffiliate::convertBonus($affiliate_bonus)))}
+											{if $use_affiliate}
+											<a id="cancel-affiliate" href="#">[`Cancel`]</a>
+											{else}
+											<input type="submit" name="use_affiliate" value="[`Use bonus`]">
+											{/if}
+										</div>
+										<div class="col w3 align-center affiliate-discount">&minus; {if $use_affiliate}{shop_currency_html(shopAffiliate::convertBonus($used_affiliate_bonus))}{else}0{/if}</div>
+										<div class="col w1">&nbsp;</div>
+									</div>
+								{/if}
+
+								{if shopAffiliate::isEnabled() && !empty($add_affiliate_bonus)}
+									<div class="row">
+										<div class="col-xs-6 col-sm-6 col-md-9 col-lg-9 tr"></div>
+										<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+											<p class="affiliate"><i class="icon16 like"></i> {sprintf("[`This order will add <strong>+%s bonuses</strong> to  your account, which you will be able to spend on getting additional discounts later.`]", $add_affiliate_bonus)}</p>
+										</div>
+									</div>
+								{/if}
+
+								<div class="blank"></div>
+								<!-- TOTAL -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-9 col-lg-9 tr"><strong>[`Total`]</strong></div>
+									<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2  tc total">
+										<span class="nowrap cart-total total">{shop_currency_html($cart.total, true)}</span>
+									</div>
+								</div>
+
+								<div class="blank"></div>
+								<!-- TOTAL -->
+								<div class="row order_total_label">
+									<div class="col-xs-6 col-sm-6 col-md-9 col-lg-9 tr"><strong>Стоимость заказа с учетом доставки</strong></div>
+									<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2  tc ">
+										<span class="nowrap price order_total">{shop_currency_html($cart.total, true)}</span>
+									</div>
+								</div>
+
+							 </div>
+						</form>
+
+							<div class="row">
+								{*<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 featured-shipping-and-payment">
+
+									{$availabe_options = $wa->shop->payment()}
+									{$_cnt = 0}
+									{foreach $availabe_options as $option name=options}
+										{if $_cnt == 8}{break}{/if}
+										{if $option.logo}
+											<img src="{$option.logo}" alt="{$option.name}">
+											{$_cnt = $_cnt + 1}
+										{/if}
+									{/foreach}
+								</div>
+								<div class="col-xs-12">
+									<hr />
+								</div>
+
+
+								<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 tr cart-checkout">
+									{foreach $frontend_cart as $_}{$_}{/foreach}
+									<input name="checkout" type="submit" value="[`Proceed to checkout`]" class="btn btn-success btn-lg">
+									<div class="blank"></div>
+								</div>
+								*}
+
+								{if !waRequest::isXMLHttpRequest()}
+									<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+										{foreach $frontend_cart as $_}{$_}{/foreach}
+									</div>
+								{/if}
+							</div>
+
+					</div>
+
+				{if $related = $wa->shop->crossSelling($cart.items, 'product_id')}
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 related">
+						{* <h4><strong>[`Recommended!`]</strong> {sprintf('[`Customers who bought %s also bought`]', $item.product.name|escape)}:</h4> *}
+
+						<h5>
+							Вместе с этим товаром покупают:
+						</h5>
+						<div class="clear-both clearfix"></div>
+						{include file="list-thumbs-mini.html" products=$related without_form=true}
+						<div class="clear-both clearfix"></div>
+					</div>
+				{/if}
+				</div>
+			</div>
+		{/if}
+	</div>

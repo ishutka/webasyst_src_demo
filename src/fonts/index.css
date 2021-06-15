@@ -1,0 +1,82 @@
+@import 'styles.css';
+/* fira-sans-regular - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-regular.svg#FiraSans') format('svg'); /* Legacy iOS */
+  
+  }  
+@font-face {
+    font-family: 'Playfair Display';
+    src:url("Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+@font-face {
+    font-family: 'Fira Sans Medium';
+    src: local('Fira Sans Medium'), local('FiraSans-Medium'),
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-500.woff') format('woff'), /* Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-500.svg#FiraSans') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Fira Sans light';
+    src: local('Fira Sans light'), local('FiraSans-light'),
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-300.woff') format('woff'), /* Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-300.svg#FiraSans') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Fira Sans bold';
+    src: local('Fira Sans bold'), local('FiraSans-bold'),
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-600.woff') format('woff'), /* Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-600.svg#FiraSans') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Fira Sans black';
+    src: local('Fira Sans black'), local('FiraSans-black'),
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-800.woff') format('woff'), /* Modern Browsers */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fira-sans-v10-latin_cyrillic-ext/fira-sans-v10-latin_cyrillic-ext-800.svg#FiraSans') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "flip-iconsfont";
+    src:url("./fonts/flip-iconsfont.eot?123");
+    src:url("./fonts/flip-iconsfont.eot?123&#iefix") format("embedded-opentype"),
+      url("./fonts/flip-iconsfont.woff?123") format("woff"),/*IE&opera&firefox&chrome format*/
+      url("./fonts/flip-iconsfont.ttf?123") format("truetype"),/*firefox&chrome format*/
+      url("./fonts/flip-iconsfont.svg#flip-iconsfont") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  

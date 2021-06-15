@@ -1,0 +1,10 @@
+<div id="menu-primary-menu">
+  <ul class="container">
+    {$top_categories = shopSiteprofmenuPlugin::getTopLevelCategories()}
+    {foreach $top_categories as $category }
+      <li>
+        <a href="/{$category.full_url}/" title="{$category.name}">{$category.name}</a>
+      </li>
+    {/foreach}
+  </ul>
+</div>

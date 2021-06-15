@@ -1,0 +1,19 @@
+{if count($product2articles) > 0}
+    <div id="product2articles">
+        {foreach  $product2articles as $p}
+        <div class="product_article_item">            
+            <a class="product_article_title" href="{$p.link}">{$p.title}</a>
+            {if $p.text_before_cut}
+                <p>{$p.text_before_cut}</p>
+                <a 
+                    target="_blank" 
+                    href="{$p.link}"
+                >
+                    Читать полностью 
+                    <i class="fa fa-long-arrow-right"></i>
+                </a>
+            {/if}
+        </div>
+        {/foreach}
+    </div>
+{/if}

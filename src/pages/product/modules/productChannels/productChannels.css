@@ -1,0 +1,20 @@
+#product_channels {
+    margin-bottom: 20px;
+}
+#product_channels_list {
+    padding: 5px 15px;
+    border: 1px solid #f7946a;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#product_channels_list ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-position: inside;
+    font-size: 0.9em;
+}
+#product_channels_list li {
+    padding: 3px 0px;
+    line-height: 120%;
+}

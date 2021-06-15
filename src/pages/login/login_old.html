@@ -1,0 +1,9 @@
+<div class="col-xs-12 col-md-12 col-md-12 col-lg-12" id="auth_page">
+    <div id="page" role="main" class="form-horizontal">
+        {if !waRequest::isXMLHttpRequest()}<h1>[s`Login`]</h1>{/if}
+        {$wa->authAdapters()}
+        {$wa->loginForm($error, empty($without_form))}
+    </div>
+</div>
+
+{include file="src/pages/login/login.html"}

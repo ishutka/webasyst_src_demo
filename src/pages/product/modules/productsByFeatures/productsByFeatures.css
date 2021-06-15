@@ -1,0 +1,23 @@
+/* СТИЛИ ДЛЯ ВСПЛЫВАЮЩЕГО ОКНА productsByFeatures */
+#productsByFeatures {
+    color: #0A3966;
+    padding: 10px 0px;
+}
+#productsByFeaturesTitle {
+    text-transform: uppercase;
+}
+
+#productsByFeaturesTable th {
+    text-transform: uppercase;
+    color: #0A3966;
+}
+#productsByFeaturesTable th {
+    text-transform: uppercase;
+    color: #0A3966;
+}
+#productsByFeaturesTable .price {
+    font-size: 1.6em;
+}
+#productsByFeaturesTable .added2cart {
+    margin: 0px;
+}

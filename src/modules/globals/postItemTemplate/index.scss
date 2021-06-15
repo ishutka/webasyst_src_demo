@@ -1,0 +1,75 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+.index_post_item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    .article-img {
+        width:100%;
+        height:240px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 8px;
+        img {
+            position: absolute;
+            // три строки ниже нужны для центрирования в IE11
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: 100%;
+        }
+        img[lazy="loading"]{
+            min-width: 60px;
+            width: 40px;
+            height: auto;
+        }
+    }
+    .categories-links_block {
+        margin-bottom: 5px;
+    }
+    .categories-links {
+        margin-right: 5px;
+        @include minor_link();
+        align-self: flex-start;
+        &:not(:last-child):after {
+            content: ',';
+        }
+    }
+    .item-name {
+        font-size: 20px;
+        font-weight: 600;  
+        margin-bottom: 25px;
+        line-height: 1.2;
+        display: block;
+    }
+    @media screen and (max-width: 1199px) {
+         .article-img {
+            height: 200px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .article-img {
+            height: 240px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .article-img {
+            height: 180px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .article-img {
+            height: 240px;
+        }
+    }
+    @media screen and (max-width: 360px) {
+        .article-img {
+            height: 180px;
+        }
+    }
+}

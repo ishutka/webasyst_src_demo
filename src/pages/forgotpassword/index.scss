@@ -1,0 +1,21 @@
+#forgot_password_page{
+    padding-bottom: 40px
+}
+.wa-forgotpassword-form-wrapper .wa-field-login .wa-name {
+    display:none;
+}
+.wa-forgotpassword-form-wrapper, .wa-set-password-form-wrapper {
+    text-align: center;
+    form {
+        display: inline-block;
+        text-align: left;
+    }
+}
+.go-back {
+    text-align: center;
+    .btn--report {
+        min-height: 46px;
+        padding: 6px 12px;
+        line-height: 2;
+    }
+}

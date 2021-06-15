@@ -1,0 +1,47 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+@import './components/footerMainPart/index.scss';
+@import './components/footerCategoriesLinks/index.scss';
+#footer {
+  position: relative;
+  border-top: 1px solid #e1e1e1;
+  .footer-bottom {
+    padding: 35px 0;
+    border-top: 1px solid #e1e1e1;
+    #copyright {
+      font-size: 9px;
+      p {
+        margin-bottom: 0
+      }
+      span {
+        font-size: 10px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+   ul:not(#help-btns){
+    list-style:none;
+    padding: 0
+  }
+  .v--modal-box {
+    max-height: 90%;
+  }
+  .contacts-modal {
+    background: #fff;
+    padding: 15px 25px;
+    h4 {
+      font-size: 24px;
+      color: $body_font_color;
+      margin-bottom: 25px;
+    }
+    .small {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 59px;/*like height of bottom mobile menu panel*/
+    .footer-bottom {
+      padding: 30px 0;
+    }
+  }
+}

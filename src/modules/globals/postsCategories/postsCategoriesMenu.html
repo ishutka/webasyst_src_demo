@@ -1,0 +1,16 @@
+{$categories = blogCategoryPlugin::getCategories()}
+
+<div class="post-categories-side-bar">
+    <p class="posts-menu-heading">Категории</p>
+    <ul class="categories nav-tab">
+        {$page_link={$smarty.server.REQUEST_URI}}
+        {foreach $categories as $c}
+        {$item_link={$wa_url}|cat:"articles/category/{$c.url}/"}
+        <li class="nav-item {if $item_link eq $page_link}active{/if}"> 
+            <a  href="{$wa_url}articles/category/{$c.url}/" title="{$c.name}">
+            {$c.name}
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</div>

@@ -1,0 +1,38 @@
+{if $product.is_old eq '1'}
+    {assign var=new_products value=shopSiteprofoldproductsPlugin::show_new_products($product.id)}
+    {if $new_products}
+            <div id="show_new_products_outer">
+                <div class="label label-success">Рекомендуем новые модели</div>
+                <div id="show_new_products" class="owl-carousel">
+                    {foreach from=$new_products item=p}
+                        <div>
+                            <a class="new_prodcut_img" href="{$p.frontend_url}">
+                                {if $p.image_id}
+                                    {$wa->shop->productImgHtml(['id'=> $p.id, 'image_id' => $p.image_id, 'class' => 'img-responsive','ext' => $p.ext, 'image_desc' => $p.name, 'image_filename' => $p.image_filename], '300x300', ['alt' => $p.name,'class' => 'img-responsive'])}
+                                {else}
+                                    <img class="img-responsive"  src="/images/no-photo.gif" />
+                                {/if}
+                            </a>
+                            {if $p.price > 0}
+                            <p>
+                                <span class="price nowrap">{shop_currency_html($p.price,$p.currency)}</span>
+                                {* 
+                                    if $price_usd = shopSiteprofPriceControlPlugin::show_price_USD($p.price)
+                                    <span class="usd_price nowrap">$price_usd</span>
+                                /if
+                                *}
+                            </p>
+                            {else}
+                                <p class="out-of-stock"><strong>Нет в наличии</strong></p>
+                            {/if}
+                            <a class="new_prodcut_name" href="{$p.frontend_url}">{$p.name}</a>
+
+                        </div>
+                    {/foreach}
+                </div>
+                <div class="big_blank"></div>
+            </div>
+        <hr />
+
+    {/if}
+{/if}

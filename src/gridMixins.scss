@@ -1,0 +1,35 @@
+$offset: 30px;
+$offset_half: $offset/2;
+$offset_40: 40px;
+$offset_40_half: $offset_40/2;
+@mixin col_inner($n, $col:12, $offs: '0px') {
+    width: calc(100% / #{$col} * #{$n} - #{$offs});
+}
+@mixin col( $col: 12, $offs: '0px') {
+    @for $i from 1 through $col {
+        .col-xs-#{$i} {
+            @include col_inner($i);
+        }
+    }
+    @media screen  and (min-width: 768px) {
+        @for $i from 1 through $col {
+           .col-sm-#{$i} {
+               @include col_inner($i);
+           }
+       }
+   }
+   @media screen  and (min-width: 992px) {
+       @for $i from 1 through $col {
+           .col-md-#{$i} {
+               @include col_inner($i);
+           }
+       }
+    }
+    @media screen  and (min-width: 1200px) {
+        @for $i from 1 through $col {
+            .col-lg-#{$i} {
+                @include col_inner($i);
+            }
+        }
+    }
+}

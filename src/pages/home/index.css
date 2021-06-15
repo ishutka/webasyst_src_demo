@@ -1,0 +1,79 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+
+
+#home_slider {
+    margin-top:-5px; 
+    /* т.к. блок с контентом имеет отступ сверху в 5px */
+}
+.owl-carousel .owl-dot { 
+    outline:none;
+}
+.home-reviews-wrapper {
+    padding: 70px 0;
+    background: #f5f5f5;
+    h2 {
+        text-transform: uppercase;
+        font-size: $offset_40_half;
+        font-weight: 600;
+        margin: 0 0 30px;
+        line-height: 1;
+    }
+}
+.owl-carousel .owl-dot span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: transparent;
+    transition: 0.5s;
+    border-radius: 20px;
+    border: 1px solid $main_brand_color;
+
+}
+.owl-carousel .owl-dot:hover span,
+.owl-carousel .owl-dot.active span {
+    background: $main_brand_color;
+    opacity: 1;
+}
+.owl-dots {
+    text-align:center;
+    width: 100%;
+    line-height: 0;
+}
+.owl-carousel .owl-stage-outer {
+    width:100%;
+} 
+.home-articles-wrapper {
+    padding: 50px 0;
+}
+img[lazy='loading'] {
+    min-width:30px;
+    max-width:60px;
+}
+.index_post_item {
+    max-width: 350px;
+}
+@media screen and (max-width:768px){
+    .home-reviews-wrapper {
+        padding: $offset_40 0;
+    }
+    #index_blog_posts {
+        margin-bottom: 10px;
+    }
+    #index_blog_posts  .index_post_item{
+        text-align: justify;
+        margin-bottom: 40px
+    }
+}
+@media screen and (max-width:499px){
+    #homecategories_services_plugin .owl-item >div,
+     #index_article_posts .index_post_item,
+     #index_blog_posts .index_post_item {
+        padding:0
+    }
+    .owl-carousel.owl-loaded.row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

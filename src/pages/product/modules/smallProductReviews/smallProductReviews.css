@@ -1,0 +1,50 @@
+#small_product_reviews {
+    font-size: 1.2em;
+    position: relative;
+    top: -1px;
+    color: #333;
+    text-decoration:underline;
+}
+.rating i.icon16 {
+    margin-right: 0.13em;
+}
+.icon16.star, .icon16.star-full {
+    background-position: -4px -204px;
+    background-size: auto;
+    width: 12px;
+    height: 12px;
+}
+
+* i.icon16 {
+    text-decoration: none !important;
+    vertical-align: top;
+    margin: 0.2em 0.25em 0 0;
+}
+i.icon16 {
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-indent: -9999px;
+    text-decoration: none !important;
+    background-image: url(/wa-apps/shop/themes/flip/img/icons.png);
+    background-size: 260px 160px;
+}
+.icon16.star-empty {
+    background-position: -44px -204px;
+    background-size: auto;
+    width: 12px;
+    height: 12px;
+}
+.icon16.star-half {
+    background-position: -23px -204px;
+    background-size: auto;
+    width: 12px;
+    height: 12px;
+}
+.icon16.star-hover {
+    background-position: -4px -204px;
+    background-size: auto;
+    width: 12px;
+    height: 12px;
+}

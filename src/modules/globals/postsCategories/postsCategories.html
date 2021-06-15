@@ -1,0 +1,40 @@
+{$categories = blogCategoryPlugin::getCategories()}
+<div class="post-categories-tabs">
+    <h1 class="active-tab-heading hidden-xs hidden-sm">
+        {if $current_page=='info'}
+            Все статьи
+        {else if $current_page=='info_search'}
+            {foreach $categories as $c}
+                {if $c.selected==TRUE}{$c.name}{/if}
+            {/foreach}
+        {/if}
+    </h1>
+    <ul class="categories nav-tab">
+        <li class="nav-item"> 
+            <a  data-toggle="tab" href="{$wa_app_url}" {if $current_page=='info'}class="active"{/if}title="Все статьи">
+                Все статьи
+            </a>
+        </li>
+        {foreach $categories as $c}
+            {if $c.posts_count>0}
+            <li class="nav-item"> 
+                <a  data-toggle="tab" href="{$c.link}" {if $c.selected==TRUE}class="active"{/if}title="{$c.name}">
+                {$c.name}
+                </a>
+            </li>
+            {/if}
+        {/foreach}
+    </ul>
+    <div  class="tab-content">
+        <div class="tab-pane row" >
+            {foreach $posts as $p} 
+                <div class="col-xs-6 col-md-4">
+                    {include file="./../postItemTemplate/index.tpl"}
+                </div> 
+            {/foreach}
+        </div>
+    </div>
+    <div class="tc">
+        {wa_pagination total=$pages nb=3 attrs=['class' => "pagination"] prev='<i class="icon-014-left"></i>' next='<i class="icon-015-right"></i>'}
+    </div>
+</div>

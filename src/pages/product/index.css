@@ -1,0 +1,200 @@
+#product_image_column {
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+}
+/* icon for loader */
+.icon16.loading {
+  background-image: url(/wa-apps/shop/themes/flip/img/loading16.gif);
+  background-position: 0 0;
+  background-size: 16px 16px;
+  margin-left: 0px;
+}
+/* --end-- */
+.col_product_stocks {
+  margin: 0px 0px 10px 0px;
+}
+#product_page_cart .text_in_stock,
+#cartFormDouble .text_in_stock {
+  color: #0A3966;
+}
+#scrollLeftInner {
+  height: 100%;
+  width:100%;
+  margin-right: -17px;
+}
+.corner.top.right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+#product_page .compare-at-price {
+  font-size: 14px;
+}
+
+#product_page #cartFormDouble .col_product_price{
+  flex-wrap: wrap
+}
+.scroll-y-wrapp {
+  overflow-y: auto;
+  max-height: calc(100vh - 400px);
+  min-height: 30vh;
+  padding: 2px 15px 15px;
+}
+#product_base_info_column .stocks {
+  margin-top: 3px;
+}
+#product_base_info_column .h3,
+#product_base_info_column h3 {
+  color: #333;
+}
+.pbfButton{
+  display:flex;
+  justify-content: center
+}
+.icon16.color {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 12px;
+  height: 12px;
+  background-image: none;
+}
+.icon16.stock-transparent {
+  background-position: -176px -16px;
+}
+.stocks .stock-none {
+  color: #aaa;
+}
+
+
+.btn.btn-success:hover,
+.btn.btn-default:hover {
+  opacity: 0.8;
+}
+/*cкроем vue-checkbox*/
+#product_page .checkbox-component > input + label > .input-box {
+  display: none;
+}
+#product_page .radio-component > input:checked:focus + label > .input-box {
+  box-shadow: 0 0 2px 3px transparent;
+}
+#product_page .radio-component > input:focus + label > .input-box {
+  box-shadow: 0 0 2px 3px transparent;
+}
+/*----end cкроем vue-checkbox*/
+  /*gliphicon styles for checkbox*/
+
+#product_page .checkbox-component > input:checked + label .button-checkbox {
+  background: #48a951;
+}
+#product_page .checkbox-component > input + label .glyphicon-check {
+  display: none;
+  color: #fff;
+}
+#product_page .checkbox-component > input:hover + label .glyphicon-unchecked {
+  color: red;
+}
+#product_page .checkbox-component > input:checked + label .glyphicon-unchecked {
+  display: none;
+}
+#product_page .checkbox-component > input:checked + label .glyphicon-check {
+  display: inline-block;
+}
+
+#product_page .radio-component > input:checked + label > .input-box {
+  border: unset;
+  background: #fff;
+  border: #48a951 3px solid;
+}
+#product_page .radio-component > input + label > .input-box {
+  width: 12px;
+  height: 12px;
+  vertical-align: top;
+  margin: 4px 6px 4px 2px !important;
+  border: 2px solid #333;
+}
+#product_page  .services .button-checkbox {
+  float: left;
+  padding: 3px 4px 0;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #333;
+}
+#product_page .price{
+  line-height:1
+}
+#product_page
+  .radio-component
+  > input:checked
+  + label
+  > .input-box
+  > .input-box-circle {
+  margin: 2px;
+  background: #48a951;
+  width: 2px;
+  height: 2px;
+}
+.stocks {
+  text-align: left;
+}
+.radio-component .stock-none {
+  color: #aaa;
+  font-size: 12px;
+}
+.services {
+  margin-bottom: 20px;
+}
+.service-price {
+  color: #0A3966;
+}
+.services .radio-component {
+  cursor: pointer;
+  min-height: 20px;
+  padding-left: 6px;
+  margin-bottom: 0;
+}
+.services .service_info {
+  line-height: 110%;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #669933;
+  text-align: left;
+  width: calc(100% - 30px);
+}
+.services label {
+  padding-left: 0px;
+  padding-top: 5px;
+  width: 100%;
+}
+.alert {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.added2cart a {
+  text-decoration: underline;
+}
+.services .text_in_stock {
+  font-size: 12px;
+}
+@media screen and (max-width: 991px) {
+  #product_page .price{
+    line-height:40px
+  }
+  .product_btn_cart_outer > button {
+    padding: 6px;
+  }
+  .scroll-y-wrapp {
+    display: none
+  }
+  #product_image_column {
+    position: relative;
+    top:0;
+  }
+}

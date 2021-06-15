@@ -1,0 +1,75 @@
+<div id="product_navigation" class="hidden-xs hidden-sm ">
+        <ul role="tablist">
+            {if $productsSets}
+                <li role="tab">
+                    <a href="#product-productsSets">
+                        <i class="fa fa-gift"></i>
+                        <span class="nav_text">
+                            Акции
+                        </span>
+                    </a>
+                </li>
+            {/if}
+            {if $product.video}
+                <li role="tab">
+                    <a href="#product-video">
+                        <i class="fa fa-youtube-play"></i>
+                        <span class="nav_text">
+                            Видео-обзор
+                        </span>
+                    </a>
+                </li>
+            {/if}
+
+            <li role="tab">
+                <a href="#product-description">
+                    <i class="fa fa-info-circle"></i>
+                    <span class="nav_text">
+                        Описание
+                    </span>
+                </a>
+            </li>
+
+            {if $product.features}
+                <li role="tab">
+                    <a href="#product-features">
+                        <i class="fa fa-gears"></i>
+                        <span class="nav_text">
+                            Характеристики
+                        </span>
+                    </a>
+                </li>
+            {/if}
+            {if $product.complectation}
+                <li role="tab">
+                    <a href="#product_complectation">
+                        <i class="fa fa-shopping-bag"></i>
+                        <span class="nav_text">
+                            Комплект поставки
+                        </span>
+                    </a>
+                </li>
+            {/if}
+            <li role="tab">
+                <a href="#product-reviews">
+                    <i class="fa fa-commenting"></i>
+                    <span class="nav_text">
+                        Последние отзывы
+                    </span>
+                </a>
+            </li>
+
+            {if count($product2articles) > 0}
+                <li role="tab">
+                    <a href="#product2articles">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span class="nav_text">
+                            Обзоры
+                        </span>
+                    </a>
+                </li>
+            {/if}
+
+
+        </ul>
+    </div> 

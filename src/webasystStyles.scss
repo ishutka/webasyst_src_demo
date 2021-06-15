@@ -1,0 +1,112 @@
+/*Стили для форм на странице восстановления пароля*/ 
+user-buttons .wa-auth-adapters {display:none;}
+.wa-set-password-form-wrapper,
+.wa-forgotpassword-form-wrapper {
+    margin-top: 10px;
+    .wa-field {
+        .wa-value  {
+            margin-bottom: 15px !important;
+            input[type="search"],input[type="password"],input[type="text"], input[type="email"], select, textarea
+            {
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                color: #000;
+                font-weight: 400;
+                padding: 14px 16px;
+                box-shadow: none;
+            }
+            button, input[type="submit"],input[type="reset"]{
+                min-height: 48px;
+                color: #fff!important;
+                background-color: #fb7c00;
+                border-color: #fb7c00;
+                transition: .3s;
+                line-height: 1.42857143;
+                border-radius: 4px;
+                cursor: pointer;
+                background-image: none;
+                text-align:center;
+                border: 1px solid #fb7c00;
+                font-weight: 600;
+                font-size: 16px;
+                margin:0px;
+                padding:0px 16px;
+            }
+            .wa-confirmation-code-input-message {
+                display: block;
+            }
+            @media screen and  (max-width: 500px) {
+                button, input[type="submit"],input[type="reset"],
+                input[type="search"],input[type="password"],input[type="text"],
+                input[type="email"], select, textarea {
+                    margin-bottom: 15px;
+                    width: 100%;
+                }
+                .wa-forgotpassword-button {
+                    display: block;
+                }
+            }
+        }
+        &.wa-field-confirmation-code {
+            margin-top: 0;
+        }
+    }
+    .wa-login-url {
+        margin: 10px 0 !important;
+    }
+}
+form section {
+    button, input[type="submit"],input[type="reset"]{
+        min-height: 48px;
+        color: #fff!important;
+        background-color: #fb7c00;
+        border-color: #fb7c00;
+        transition: .3s;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        cursor: pointer;
+        background-image: none;
+        text-align:center;
+        border: 1px solid #fb7c00;
+        font-weight: 600;
+        font-size: 16px;
+        margin:0px;
+        padding:0px 16px;
+         @media screen and  (max-width: 500px) {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+    }
+}
+
+
+/*Стили для компонента авторизации через соц-сети*/ 
+.wa-auth-adapters {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        li {
+            padding: 0 15px;
+        }
+        a {
+            width: 50px;
+            display: block;
+        }
+        img {
+            // box-shadow: #ccc 0 0 10px;
+            border-radius: 50%;
+            width: 100%;
+        }
+    }
+    br {
+        display: none;
+    }
+    > p {
+        text-align: center;
+        max-width: 350px;
+        margin: 10px auto;
+        line-height: 1.4;
+    }
+}

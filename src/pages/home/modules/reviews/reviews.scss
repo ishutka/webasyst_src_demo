@@ -1,0 +1,108 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+
+#index_reviews{ 
+    .owl-nav  {
+        position:absolute;
+        top: -55px;
+        right: 0;
+        button {
+            outline: none;
+        }
+        i {
+            font-size: 25px;
+            color: #ccc;
+            transition: 0.3s;
+            &:hover {
+                color: $main_brand_color;
+            }
+        }
+    }
+    .owl-item  {
+        padding-top: 50px;
+    }
+    .owl-dots {
+        margin-top: $offset_40_half;
+        span {
+            margin :0 5px;
+        }
+    }
+    strong {
+        display: block;
+        margin: $offset 0;
+        font-size: 18px;
+        color: $link_color;
+        height: 1.6em;
+    }
+    .pr-name {
+        margin-right: $offset_40;
+        height: 3.2em;
+        overflow: hidden;
+        display: block;
+    }
+    .index_review_item_text {
+        margin-bottom: $offset_40;
+        overflow: hidden;
+        height: 6.4em;
+        position: relative;
+        > div {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(155deg,rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%,#fff 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .index_review_item {
+        background: #fff;
+        position: relative;
+        padding: 0 $offset_40 $offset_half;
+        > img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: $offset_40_half;
+            right: $offset_40_half;
+        }
+    }
+    .pr-img {
+        display: inline-block;
+        margin: -45px 0 $offset_half;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 10px #ccc; 
+        img{
+            max-width: 90px;
+        }
+        img[lazy="error"] {
+            max-width: 100px
+        } 
+        img[lazy='loading']{
+            min-width: $offset_40;
+            max-width: $offset_40;
+        }  
+    }
+   
+    @media screen and (min-width:768px){
+        display: flex;
+        flex-wrap: wrap;
+        .owl-dots  {
+            display: none;
+        }
+    }
+    @media screen and (max-width:767px) {
+        .index_review_item {
+            padding: 0 $offset_40_half $offset_half;
+        }
+        .owl-nav  {
+            display: none;
+        }
+        .index_review_item_text {
+            margin-bottom: $offset_40_half;
+        }
+    }
+    @media screen and (max-width:499px){
+        margin-bottom: 0px;
+    }
+}

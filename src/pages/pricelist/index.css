@@ -1,0 +1,39 @@
+#PriceListBtns {
+    display:inline-block
+}
+.pricelist_loader{
+    float:left;
+    margin: 5px 7px 15px 0;
+    width:22px
+}
+.hat_pricelist{
+    display: flex;
+    justify-content: space-between
+}
+.hat_pricelist h1{
+    margin:0;
+    line-height: 34px;
+    white-space: nowrap
+}
+.right-float {
+    float: right !important;
+}
+#pricelist > .nav > li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ececea;
+}
+#pricelist > .nav > li:last-child {
+    border-bottom: none;
+}
+@media screen and (max-width:500px){
+    .hat_pricelist{
+        flex-direction:column
+    }
+    #PriceListBtnShowAll,
+    #PriceListBtnDownloadPrice{
+        margin-top:5px
+    }
+    #PriceListBtns a{
+        min-width:170px
+    }
+}

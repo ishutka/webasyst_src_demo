@@ -1,0 +1,15 @@
+#best_review ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+  #best_review .review-reply {
+    display: none;
+  }
+  #best_review {
+    margin: 10px 0px;
+  }
+  #best_review .review {
+    margin: 0px;
+    background: #f8f7f3;
+  }

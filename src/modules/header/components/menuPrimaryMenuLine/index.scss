@@ -1,0 +1,31 @@
+#menu-primary-menu {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    li {
+      padding: 0;
+      display: inline-block;
+      max-height: 57px;
+      flex:0 1 auto;
+      max-width: 25%;
+      a {
+        padding: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 15px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+    }
+    ul {
+      padding: 0;
+      display: flex;
+      margin-bottom: 0;
+      justify-content: space-between;
+      &:before,&:after {
+        content: none;
+      }
+    }
+  }

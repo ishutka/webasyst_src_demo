@@ -1,0 +1,30 @@
+.grid-style-switcher {
+    display: flex;
+    flex: 0 auto;
+    align-items: center;
+    padding: 10px 0;
+    i {
+        font-size: 25px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    .icon-022-view {
+        opacity: 1;
+    }
+    .icon-023-view {
+        opacity: 0.35;
+    }
+}
+.rows-style .grid-style-switcher {
+    .icon-022-view {
+        opacity: 0.35;
+    }
+    .icon-023-view {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 600px) {
+    .grid-style-switcher{
+        display: none;
+    }
+}  

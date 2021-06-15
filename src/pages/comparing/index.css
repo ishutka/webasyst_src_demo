@@ -1,0 +1,18 @@
+#comparing .table-btn .btn {
+  white-space: normal;
+  width: 100%;
+}
+
+#comparing .table-btn {
+  vertical-align: middle;
+  padding: 8px 0;
+}
+@media screen and (max-width: 767px) {
+  #comparing .table-btn .btn {
+    font-size: 13px;
+    padding: 6px;
+  }
+  #comparing .table-btn + td {
+    vertical-align: middle;
+  }
+}

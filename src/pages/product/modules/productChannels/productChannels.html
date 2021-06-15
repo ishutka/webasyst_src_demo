@@ -1,0 +1,23 @@
+{if $productChannels}
+    <div id="product_channels">
+        <h3>Списки каналов для {$product.name|escape}</h3>
+
+            {foreach $productChannels as $channel}
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="product_channels_list">
+                            <p><strong>{$channel.short_title}</strong></p>
+                            {$channel.short_text}
+                            <p>
+                                <a href="{$channel.url}" class="btn btn-xs btn-orange">
+                                    <span class="glyphicon glyphicon-download"></span>
+                                    Подробнее
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blank"></div>
+            {/foreach}
+    </div>
+{/if}

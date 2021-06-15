@@ -1,0 +1,36 @@
+#filtersLinks .fa-minus-square-o {
+    margin-right: 5px
+}
+#filtersLinks .feature-heading {
+    white-space: nowrap;
+    margin-bottom: 15px;
+    font-size: 16px;
+    max-width: 92%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#filtersLinks ul {
+    list-style: none;
+    padding-left:0px;
+    max-height: 260px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+#filtersLinks li a {
+    line-height: 1
+}
+#filtersLinks li {
+    padding: 8px 5px;
+    display:flex;
+    align-items: center
+}
+#filtersLinks li:before{
+    content: '';
+   display: inline-block;
+   height: 12px;
+   width: 12px;
+   border-radius: 12%;
+   border:1px solid #838875;
+   background: #dedede;
+   margin-right:10px;
+}

@@ -1,0 +1,12 @@
+{shopProductsByFeaturesPlugin::getButton($product)}
+{*
+    {if $product.post_id >0 && $wa->blog }
+        {$product.post_image = blogLogopostPlugin::getImgUrl($product.post_id)}
+        {$post = blogLogopostPlugin::getPost($product.post_id)}
+        {if $product.post_image}
+        <a href="/articles/{$post.url}/" target="_blank">
+            <img class="img-responsive" src="{$product.post_image}" />
+        </a>
+        {/if}
+    {/if}
+*}

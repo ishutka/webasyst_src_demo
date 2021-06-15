@@ -1,0 +1,6 @@
+.position_static {
+  position: static !important;
+}
+#product-core-image{
+  width:100%;
+}

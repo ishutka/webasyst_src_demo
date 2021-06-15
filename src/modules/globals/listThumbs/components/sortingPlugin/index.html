@@ -1,0 +1,49 @@
+{$sort_fields = [ 'name' => '[`Name`]', 'price' => '[`Price`]', 'total_sales' => '[`Bestsellers`]', 'rating' => '[`Customer rating`]', 'create_datetime'=>'[`Date added`]', 'stock' => '[`In stock`]']} 
+{if !isset($active_sort)} 
+    {$active_sort =$wa->get('sort', 'create_datetime')} 
+{/if}
+{$sorted_value=''}
+{$order=''}
+{$available_sort_fields=[]}
+{foreach $sort_fields as $sort => $name} 
+    {$data = shopSiteprofProductsAddedFieldsPlugin::sortUrl($sort,$name, $active_sort)}
+    {if $data}
+      {$available_sort_field=array_push($available_sort_fields,$data)}
+      {if $data.active}
+        {$sorted_value=$data.text}
+        {$order=$data.order}
+      {/if}
+    {/if}
+{/foreach}
+<span style="display:none" class="sort-value">{$sorted_value}</span>
+<div class="selection"  @click="showMobileSorting"> 
+    {if strlen($sorted_value)}
+      <span>
+        {if $order=='asc'}<i class="icon-021-sortdesk heading-sort"></i>
+        {else}<i class="heading-sort icon-020-sortasc" ></i>
+        {/if}
+        Сортировка: {$sorted_value} 
+        {if $order=='asc'}<span>убыв.</span>
+        {else}<span>возр.</span>
+        {/if}
+      </span> 
+    {else}
+      <span>Сортировать</span> 
+    {/if}
+    <i class="icon-013-down header-arrow"></i>
+    <div class="hidden-xs hidden-sm">
+     {include file="./sortingParamsList.tpl" available_sort_fields=$available_sort_fields}
+    </div>
+  </div>
+  <modal 
+    name="sortModal"
+    :resizable="true"
+    adaptive
+    width="90%"
+    height="auto"
+    scrollable>
+    <div class="mob-sort-modal-inner">
+      {include file="./sortingParamsList.tpl" available_sort_fields=$available_sort_fields} 
+      <p @click="hide('sortModal')">Закрыть</p>
+    </div>
+</modal>

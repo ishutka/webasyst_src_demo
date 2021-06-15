@@ -1,0 +1,342 @@
+@import '@/mainStylesVariables.scss';
+@import '@/gridMixins.scss';
+#header .fa-stack-bag img,
+#header .fa-stack img {
+  width: 100%
+}
+#header .fa-stack-bag {
+  width: 33px;
+  display: block;
+}
+#headerLogoColumn {
+  padding-right: 0px;
+}
+#headerLogoColumn > a {
+  width:100%
+}
+#headerLogoColumn img {
+  width: 150px;
+  height: 45px;
+}
+@media screen and (max-width: 360px) {
+  #headerLogoColumn img {
+    width:110px;
+    height: 33px;
+  }
+}
+#header #user_links {
+  text-align: right;
+}
+#header #user_links a {
+  margin: 0px;
+  line-height: 25px;
+}
+
+.icon-social {
+  background-image: url(/wa-apps/shop/themes/flip/img/social.png);
+  height: 16px;
+  width: 16px;
+}
+
+#top_categories {
+  position: absolute;
+  z-index: 3;
+  padding: 0;
+  top:calc(100% + 1px);
+  left: 0
+}
+#header-phones-and-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: stretch
+}
+.mobile-btn-cart {
+  display: block
+}
+.cart-wrapp {
+  display: flex;
+  align-items: center;
+  align-self: stretch 
+}
+.top-search-wrap-block {
+  flex-grow: 1;
+  display: none;
+  @media screen and (min-width:1200px) {
+      display: inline-block;
+  }
+}
+#preMenuCategory {
+  z-index:2;
+  position: relative;
+  background: #e6e6e6;
+}
+#toggleMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 auto;
+}
+.show-category-heading {
+  display: none;
+  white-space: nowrap;
+  margin-right:15px; 
+  font-size: 16px;
+  line-height: 1;
+}
+#preMenuCategory .container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: $offset $offset_half;   /* нужно только в том случае, если присутствуют названия городов в шапке (над телефонами) */
+  /* padding: 0px $offset_half $offset_40_half $offset_half;*/    /* нужно только в том случае, если ОТСУТСТВУЮТ названия городов в шапке (над телефонами)  */
+}
+
+/* СТИЛИ ДЛЯ ПАНЕЛИ ПОИСКА ОТОБРАЖАЮЩЕЙСЯ НА СРЕДНЕМ ЭКРАНЕ: */
+.medium-header-search-bar .top_search button,
+.medium-header-search-bar .top_search input {
+  border-radius: 0 !important;
+}
+.medium-header-search-bar .top_search button > img {
+  width:20px
+}
+.medium-header-search-bar .top_search button>span {
+  display: none;
+}
+.medium-header-search-bar .top_search i.icon-011-search {
+  font-size: 20px;
+}
+.medium-header-search-bar .top_search {
+  flex-grow: 2;
+}
+.medium-header-search-bar {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 0 5px;
+  
+}
+.medium-header-search-bar .cart-wrapp {
+  display: none;
+}
+/* the end */
+
+/* styles for header phone block */
+#header .fa-stack-phone {
+  transition: 0.3s;
+}
+#header .fa-stack-phone i{
+  font-size: 26px;
+}
+.phone-center {
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1px $offset_half;
+  background: #fff;
+  box-shadow: 0px 3px 6px #c7c7c7;
+  border-radius: 4px;
+  margin: 0 $offset_40;
+  
+  &:hover {
+    .call-block div,
+    .call-block .phone,
+    .fa-stack-phone {
+      color: $main_brand_color;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+  }
+  .call-block {
+  @include link_color_animate();}
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .phone-center {
+    padding: 2px $offset_half;
+  }
+  #preMenuCategory  {
+    border-bottom: 1px solid #ccc;
+  }
+}
+.phone-center  .call-block {
+  line-height: 20px;
+  margin-left: $offset_half;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  .phone {
+    font-family: 'Fira Sans bold', sans-serif;
+    color:#000;
+    font-size: 16px;
+    line-height: 20px;
+    flex: 1 1 auto;
+    position: relative;
+    padding:0;
+  }
+  .phones-fog {
+    width:100%;
+    border-radius: 4px;
+    position: absolute;
+    height:100%;
+    z-index: 0;
+    left: 0;
+    top:0;
+    background: linear-gradient(to right,rgba(255, 255, 255, 0) 0,rgba(255, 255, 255, 0.8) 80%,rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0)',endColorstr='rgba(255, 255, 255, 1)',GradientType=1);
+  }
+  div:not(.phone) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+/* styles for header phone block--END */
+.mobile_siteprof_currency {
+  margin:0px
+}
+@media (max-width: 1199px) {
+  .medium-header-search-bar {
+    display: flex;
+  }
+  #headerLogoColumn {
+    width:100%
+  }
+  #preMenuCategory .container::after,
+  #preMenuCategory .container::before {
+    content:none
+  }
+  #preMenuCategory .container {
+    justify-content: space-between;
+    padding: $offset $offset_half $offset_40_half;
+  }
+  #top_left_nav .badge-vakansii {
+    display: inline-block
+  }
+}
+/* стиля для модальных окон регистрации и авторизации */
+.v--modal-overlay  .h2 {
+  font-size: 30px;
+  font-family: 'Fira Sans bold',sans-serif;
+  padding: 45px 30px 20px;
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  color: #666;
+}
+#header .v--modal-overlay {
+  form {
+    padding: 0 30px 30px;
+  }
+ 
+   .h3{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 30px 0 25px;
+    line-height: 1;
+    color: #000;
+    display: block;
+  }
+  @media screen and (max-width:460px) {
+    .v--modal-box.v--modal {
+      max-width: calc(100% - 30px);
+      margin: auto;
+      left: 0 !important;
+      right: 0;
+    }
+  }
+}
+[data-modal='modal-register'] {
+  .wa-auth-adapters {
+    display: flex;
+    flex-direction: column;
+    p {
+      margin: 0 30px 10px;
+      position: relative;
+      text-align: left;
+      &::after {
+        content: 'Авторизуйтесь, указав свои контактные данные, или воспользовавшись перечисленными ниже сервисами.';
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+      }
+      @media screen and (max-width: 767px) {
+        margin: 0 15px 10px;
+      }
+    }
+    ul {
+      order: 2;
+    }
+  }    
+}
+@media (max-width: 767px) {
+  #header-phones-and-cart {
+    margin-left: auto;
+  }
+  .medium-header-search-bar .cart-wrapp,
+  .medium-header-search-bar .burger {
+    display: none;
+  }
+  #top_categories {
+    top: 0;
+  }
+  #top_categories.opened-menu .mobile-menu-slide {
+    right: 0px;
+    background-color: rgba(0,0,0 ,0.75);
+    transition: right 0.3s, background-color 0.2s ease-in 0.15s;
+  }
+  #top_categories .mobile-menu-slide{
+    transition: right 0.3s ease 0s, background-color 0s ease 0s;
+    background-color: rgba(0,0,0 ,0);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+   }
+  #header .user-buttons img {
+    cursor: pointer
+  }
+  #preMenuCategory .container {
+    width: 100%;
+    padding: $offset_half $offset_half 10px;
+    
+  }
+  #headerLogoColumn + .burger{
+    display: none
+  }
+  #headerLogoColumn {
+    flex: 1  1 100%
+  }
+  .toggled-xs.medium-header-search-bar {
+    padding-top: 15px;
+    max-height: 150px;
+    &.overflow-visible {
+      overflow: visible;
+    }
+  }
+  .medium-header-search-bar {
+    transition: 0.3s;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    .search_suggestions {
+      top: calc(100% - 7px);
+    }
+    form {
+      margin-bottom: 7px;
+    }
+  }
+}
+

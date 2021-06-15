@@ -1,0 +1,9 @@
+input.error,
+textarea.error {
+    border: 2px solid red;
+}
+.errormsg {
+    color: red;
+    margin-left: 170px;
+    display: block;
+}

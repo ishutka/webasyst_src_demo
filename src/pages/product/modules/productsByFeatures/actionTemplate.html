@@ -1,0 +1,76 @@
+<div class="container">
+    <div id="productsByFeatures">
+        {if isset($pbf) && $pbf && $pbf.title}
+            <p id="productsByFeaturesTitle">{$pbf.title}</p>
+            <div class="blank"></div>
+        {/if}
+        
+        {if $products}
+        <table class="table table-striped va_middle" id="productsByFeaturesTable">
+            <thead>
+                <tr>
+                    <th>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  Модель
+                    </th>
+                    
+                    <th class="tc">
+                        Цена
+                    </th>
+                    
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $products as $p}
+                    {$available = $p.count === null || $p.count > 0} {* $wa->shop->settings('ignore_stock_count') *}
+                    {if $available && $p.is_old == 0}
+                    <tr class="category_item_product">
+                        <td>
+                            <a href="{$p.frontend_url}" target="_blank"  title="{$p.name}">{$p.name}</a>
+                        </td>
+                        <td class="tc td_producyByFeaturesPrice"  >
+                            <div  class="offers" >
+                                {if $p.compare_price > 0}<span class="compare-at-price nowrap"> {shop_currency($p.compare_price)} </span>{/if}
+
+                                {if $available &&  $p.is_old eq 0}
+                                    {if $p.price > 0}
+                                        <span class="price nowrap">{shop_currency_html($p.price,$p.currency)}</span>
+                                        {if  $price_usd = shopSiteprofPriceControlPlugin::show_price_USD($p.price)}
+                                            / <span class="usd_price nowrap">{$price_usd}</span>
+                                        {/if}
+                                    {/if}
+                                    
+                                {elseif  $p.is_old eq 0}
+                                    {*
+                                        {if $p.price > 0} 
+                                            <span class="price nowrap">{shop_currency_html($p.price,$p.currency)}</span>
+                                            {if  $price_usd = shopSiteprofPriceControlPlugin::show_price_USD($p.price)}
+                                                / <span class="usd_price nowrap">{$price_usd}</span>
+                                            {/if}
+                                        {/if}
+                                    *}
+                                    {* <div class="out-of-stock"><strong>[`Out of stock`]</strong></div>
+                                    *}
+                                {/if}
+                            </div>
+                        </td>
+                        <td>
+                            {if $available &&  $p.is_old eq 0}
+                                <add-to-cart-button :init-data='{shopVuedataPlugin::getJsonProductDataForVue($p)}'
+                                    :id="{$p.id}">
+                                </add-to-cart-button>
+                            {/if}
+                        </td>
+                    </tr>
+                    {/if}
+                {/foreach}
+            </tbody>
+        </table>
+        <!-- <div class="tc">
+            {wa_pagination total=$pages_count attrs=['class' => "pagination"]}
+        </div> -->
+    {else}
+        <div class="alert alert-info">По вашему запросу ничего не найдено</div>
+    {/if}
+    </div>
+</div>
